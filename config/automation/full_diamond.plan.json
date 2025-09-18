@@ -1,0 +1,62 @@
+{
+  "name": "Full Diamond",
+  "version": 1,
+  "steps": [
+    {
+      "id": "spawn_bootstrap",
+      "actions": [
+        {"type": "collect", "item": "oak_log", "count": 24, "searchRadius": 96},
+        {"type": "craft", "recipe": "crafting_table", "count": 1},
+        {"type": "craft", "recipe": "stick", "count": 16},
+        {"type": "craft", "recipe": "wooden_pickaxe", "count": 1}
+      ]
+    },
+    {
+      "id": "stone_age",
+      "actions": [
+        {"type": "collect", "item": "cobblestone", "count": 40, "mineStrategy": "safeStair"},
+        {"type": "craft", "recipe": "stone_pickaxe", "count": 1},
+        {"type": "craft", "recipe": "stone_axe", "count": 1},
+        {"type": "collect", "item": "coal_ore", "count": 12, "mine": "ore"},
+        {"type": "collect", "item": "food_any", "count": 16, "strategy": "huntOrHarvest"}
+      ]
+    },
+    {
+      "id": "iron_tech",
+      "actions": [
+        {"type": "mine", "target": "iron_ore", "count": 48, "yRange": [16,64], "lighting": "place_torch"},
+        {"type": "smelt", "input": "iron_ore", "fuel": "coal", "batch": 8},
+        {"type": "craft", "recipe": "iron_pickaxe", "count": 1},
+        {"type": "craft", "recipe": "shield", "count": 1},
+        {"type": "craft", "recipe": "bucket", "count": 1}
+      ]
+    },
+    {
+      "id": "diamond_hunt",
+      "actions": [
+        {"type": "path", "goal": "yLevelBox", "y": 11, "area": 128},
+        {"type": "mine", "target": "diamond_ore", "count": 24, "strategy": "branch", "branchSpacing": 2, "lavaAvoid": true}
+      ]
+    },
+    {
+      "id": "diamond_gear",
+      "actions": [
+        {"type": "craft", "recipe": "diamond_sword", "count": 1},
+        {"type": "craft", "recipe": "diamond_pickaxe", "count": 1},
+        {"type": "craft", "recipe": "diamond_helmet", "count": 1},
+        {"type": "craft", "recipe": "diamond_chestplate", "count": 1},
+        {"type": "craft", "recipe": "diamond_leggings", "count": 1},
+        {"type": "craft", "recipe": "diamond_boots", "count": 1}
+      ]
+    }
+  ],
+  "failsafes": {
+    "minFood": 6,
+    "minHearts": 6,
+    "toolMinDurabilityPct": 10,
+    "avoidLava": true,
+    "torchPlacement": "auto",
+    "stopOnPlayerAttack": true
+  }
+}
+

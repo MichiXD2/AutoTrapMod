@@ -1,0 +1,12 @@
+{
+  "modid": "baritone_automation",
+  "name": "Baritone Automation",
+  "version": "1.0.0",
+  "description": "Advanced automation features for Baritone",
+  "authors": ["AutomationTeam"],
+  "dependencies": {
+    "forge": "[28.1.0,)",
+    "minecraft": "1.15.x"
+  }
+}
+
